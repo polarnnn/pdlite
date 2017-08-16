@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { HomePage } from '../home/home';
 /**
- * Generated class for the HelpPage page.
+ * Generated class for the AddroundPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -11,19 +10,19 @@ import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-help',
-  templateUrl: 'help.html',
+  selector: 'page-addround',
+  templateUrl: 'addround.html',
 })
-export class HelpPage {
+export class AddroundPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log('ionViewDidLoad HelpPage');
+  }
+  goBack() {
+    this.navCtrl.pop();
   }
 
-  ionViewDidLoad() {   
-    
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad AddroundPage');
   }
-
-  
 
 }

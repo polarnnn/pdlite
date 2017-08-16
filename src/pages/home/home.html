@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons start>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="toHelpPage()">
          <ion-icon name="md-help-circle"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Logo CKD,DAMASAC,KKU</ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
-         <ion-icon name="ios-options"></ion-icon>
+         <ion-icon name="ios-options" (click)="presentPopover($event)"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -17,71 +17,38 @@
 <ion-content padding>
   <!--calendar-->
   <h2>Calendar</h2>
-
   <!--lists-->
   <ion-list>
-    <ion-item-divider color="light">XX/XX/XXXX</ion-item-divider>
+    <ion-item-divider color="light">
+      <h1>XX/XX/XXXX</h1>
+      <h3>สรุปรวม xxxx มล.</h3>
+      </ion-item-divider>
     <ion-item>
       <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
+        <ion-icon name="happy" color="secondary" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
+      <h2>รอบที่ 1</h2>
+      <p>เข้า:xxxx | ออก: xxxx</p>
     </ion-item>
     <ion-item>
       <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
+        <ion-icon name="happy" color="warning" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
-    </ion-item>
-
-    <!--close lists-->
-    <!--lists2-->
-
-    <ion-item-divider color="light">XX/XX/XXXX</ion-item-divider>
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
+      <h2>รอบที่ 2</h2>
+      <p>เข้า:xxxx | ออก: xxxx</p>
     </ion-item>
     <ion-item>
       <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
+        <ion-icon name="happy" color="danger" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
-    </ion-item>
-    <ion-item no-lines>
-      <ion-avatar item-start>
-        <ion-icon name="happy"></ion-icon>
-      </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
+      <h2>รอบที่ 3</h2>
+      <p>เข้า:xxxx | ออก: xxxx</p>
     </ion-item>
   </ion-list>
-  <!--close lists2-->
+  <!--close lists-->
+
+  <!--add list-->
+  <button ion-button outline block (click)="addround()"> <ion-icon name="md-add-circle" style="padding-right: 10px"></ion-icon> เพิ่มรอบ</button>
+
+
 </ion-content>

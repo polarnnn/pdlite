@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Tabs } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { TimelinePage } from '../timeline/timeline';
 import { UrinePage } from '../urine/urine';
@@ -17,7 +17,8 @@ export class TabsPage {
   tab4Root = NoticePage;
   tab5Root = ResultPage;
 
-  constructor() {
-
+  constructor(public navCtrl: NavController) {
+    console.log('ionViewDidLoad TabsPage');
   }
+
 }
