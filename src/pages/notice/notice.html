@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
   <ion-navbar>
     <ion-title name="notice">การแจ้งเตือน</ion-title>
@@ -15,9 +15,15 @@
 
 <ion-content>
   <!--action sheet : delete-->
-  <ion-card *ngFor="let item of items">
+  <ion-card *ngFor="let item of items" style="background: #f2dede" (click)="delCard()">
     <ion-card-content>
-      <ion-icon name="warning" color="danger" style="font-size:xx-large;padding-right: 10px;vertical-align: middle; "></ion-icon> {{ item }}
+      <ion-item  style="background: #f2dede">
+      <ion-avatar item-start style="margin: 0">
+      <ion-icon name="warning" color="danger" style="font-size:xx-large;vertical-align: middle" item-start></ion-icon> 
+      </ion-avatar>
+      <h2>{{ item }}</h2>
+      <p>xx/xx/xxxx xx:xx น.</p>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 

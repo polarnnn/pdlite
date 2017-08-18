@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, NavParams, PopoverController } from 'ionic-angular';
+import { NavController, ModalController, NavParams, PopoverController,ViewController } from 'ionic-angular';
 
+import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
+import { TimelinePage } from '../timeline/timeline';
+import { UrinePage } from '../urine/urine';
+import { NoticePage } from '../notice/notice';
+import { ResultPage } from '../result/result';
 import { AddroundPage } from '../addround/addround';
 import { PopoverPage } from '../popover/popover';
 import { HelpPage } from '../help/help';
-import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -12,20 +17,32 @@ import { TabsPage } from '../tabs/tabs';
 })
 
 export class HomePage {
-tab1Root=HomePage;
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public popoverCtrl: PopoverController) {   
+  options = { year: 'numeric', month: '2-digit', day: 'numeric' };
+  currentdate = new Date().toLocaleString('th-TH',this.options);
+
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public popoverCtrl: PopoverController, private viewCtrl: ViewController) {
     console.log('ionViewDidLoad HomePage');
+   
+  }
+  ionViewWillEnter() {
+    this.viewCtrl.showBackButton(false);
   }
 
   ionViewDidLoad() {
-    
+   
+  }
+
+  toDetailRound(){
+    let detailroundModal = this.modalCtrl.create(AddroundPage); //(AddroundPage, { Params: value })
+    detailroundModal.present();
   }
 
   toHelpPage() {
-    this.navCtrl.push(HelpPage);
+    let HelpModal = this.modalCtrl.create(HelpPage); //(HelpPage, { Params: value })
+    HelpModal.present();
   }
 
-  addround() {
+  toAddround() {
     let addroundModal = this.modalCtrl.create(AddroundPage); //(AddroundPage, { Params: value })
     addroundModal.present();
   }
@@ -37,6 +54,6 @@ tab1Root=HomePage;
     });
   }
 
-  
+
 }
 

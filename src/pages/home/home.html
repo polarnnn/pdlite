@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-buttons start>
       <button ion-button icon-only (click)="toHelpPage()">
@@ -7,8 +7,8 @@
     </ion-buttons>
     <ion-title>Logo CKD,DAMASAC,KKU</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
-         <ion-icon name="ios-options" (click)="presentPopover($event)"></ion-icon>
+      <button ion-button icon-only (click)="presentPopover($event)">
+         <ion-icon name="ios-options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -20,24 +20,24 @@
   <!--lists-->
   <ion-list>
     <ion-item-divider color="light">
-      <h1>XX/XX/XXXX</h1>
+      <h1>{{currentdate}}</h1>
       <h3>สรุปรวม xxxx มล.</h3>
       </ion-item-divider>
-    <ion-item>
+    <ion-item detail-push (click)="toDetailRound()">
       <ion-avatar item-start>
         <ion-icon name="happy" color="secondary" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
       <h2>รอบที่ 1</h2>
       <p>เข้า:xxxx | ออก: xxxx</p>
     </ion-item>
-    <ion-item>
+    <ion-item detail-push (click)="toDetailRound()">
       <ion-avatar item-start>
         <ion-icon name="happy" color="warning" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
       <h2>รอบที่ 2</h2>
       <p>เข้า:xxxx | ออก: xxxx</p>
     </ion-item>
-    <ion-item>
+    <ion-item detail-push (click)="toDetailRound()">
       <ion-avatar item-start>
         <ion-icon name="happy" color="danger" style="font-size: xx-large"></ion-icon>
       </ion-avatar>
@@ -48,7 +48,7 @@
   <!--close lists-->
 
   <!--add list-->
-  <button ion-button outline block (click)="addround()"> <ion-icon name="md-add-circle" style="padding-right: 10px"></ion-icon> เพิ่มรอบ</button>
+  <button ion-button outline block (click)="toAddround()"> <ion-icon name="md-add-circle" style="padding-right: 10px"></ion-icon> เพิ่มรอบ</button>
 
 
 </ion-content>

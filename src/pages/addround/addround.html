@@ -4,16 +4,80 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
-  <ion-navbar>
-    <ion-title>addround</ion-title>
-    <button ion-button clear icon-only (click)="goBack()"><ion-icon name="close"></ion-icon></button>
+  <ion-navbar padding>
+    <ion-buttons start>
+      <button ion-button clear icon-only (click)="goBack()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>เพิ่มรอบ</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only (click)="addround()"><ion-icon name="md-send"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    addround
+  <ion-list radio-group>
+    <ion-list-header>
+      ค่าความเข้มข้น
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>1.5%</ion-label>
+      <ion-radio></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>2.5%</ion-label>
+      <ion-radio></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>3.5%</ion-label>
+      <ion-radio></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>4.5%</ion-label>
+      <ion-radio></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      น้ำยาเข้า
+    </ion-list-header>
+
+    <ion-item-group>
+      <ion-item>
+        <ion-label>เวลาเข้า</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="in_time"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>ปริมาตรเข้า(มล.)</ion-label>
+        <ion-input type="number" id="in_vol" style="text-align: right"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      น้ำยาออก
+    </ion-list-header>
+
+    <ion-item-group>
+      <ion-item>
+        <ion-label>เวลาออก</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="out_time"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>ปริมาตรออก(มล.)</ion-label>
+        <ion-input type="number" id="out_vol"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
 </ion-content>

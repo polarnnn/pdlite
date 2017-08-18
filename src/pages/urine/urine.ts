@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController,ToastController } from 'ionic-angular';
 
+// import { HomePage } from '../home/home';
+// import { TabsPage } from '../tabs/tabs';
+// import { LoginPage } from '../login/login';
+// import { TimelinePage } from '../timeline/timeline';
+// import { NoticePage } from '../notice/notice';
+// import { ResultPage } from '../result/result';
+// import { AddroundPage } from '../addround/addround';
+// import { PopoverPage } from '../popover/popover';
 /**
  * Generated class for the UrinePage page.
  *
@@ -14,22 +22,45 @@ import { IonicPage, NavController, NavParams , AlertController } from 'ionic-ang
   templateUrl: 'urine.html',
 })
 export class UrinePage {
+  options = { year: 'numeric', month: '2-digit', day: 'numeric' };
+  optionstime = { hour: '2-digit', minute: '2-digit' };
+  currentdate = new Date().toLocaleString('th-TH', this.options);
+  currenttime = new Date().toLocaleString('th-TH', this.optionstime);
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,public toastCtrl: ToastController) {
     console.log('ionViewDidLoad UrinePage');
   }
 
   ionViewDidLoad() {
-    
+
   }
 
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'แจ้งเตือน',
-      subTitle: 'บันทึกข้อมูลเรียบร้อย!',
-      buttons: ['OK']
+  addurine() {
+    let toast = this.toastCtrl.create({
+      message: 'บันทึกปัสสาวะเรียบร้อย..',
+      duration: 1000
     });
-    alert.present();
+    
+    let prompt = this.alertCtrl.create({
+      title: 'ยืนยัน',
+      message: "คุณยืนยันการบันทึกปัสสาวะใช่หรือไม่",
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: data => {
+            console.log('Cancel addurine..');
+          }
+        },
+        {
+          text: 'ยืนยัน',
+          handler: data => {
+            console.log('addurine Complete !!!');
+            toast.present();
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
 }

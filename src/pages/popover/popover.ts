@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 
+import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
+import { TimelinePage } from '../timeline/timeline';
+import { UrinePage } from '../urine/urine';
+import { NoticePage } from '../notice/notice';
+import { ResultPage } from '../result/result';
+import { AddroundPage } from '../addround/addround';
 /**
  * Generated class for the PopoverPage page.
  *
@@ -11,33 +19,25 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 @IonicPage()
 @Component({
   selector: 'page-popover',
-  template:  `
-    <ion-list>
-      <ion-list-header>ตั้งค่า</ion-list-header>
-      <ion-item class="popover" (click)="SetRoundOrDay()">
-        <ion-label>บันทึกต่อรอบ</ion-label>
-        <ion-radio value="round"></ion-radio>
-      </ion-item>
-       <ion-item class="popover" (click)="SetRoundOrDay()">
-        <ion-label>บันทึกต่อวัน</ion-label>
-        <ion-radio value="day"></ion-radio>
-      </ion-item>
-    </ion-list>
-  `,
+  templateUrl: 'popover.html'
 })
 export class PopoverPage {
-  isRound: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController) {
-    
-  }
 
-  SetRoundOrDay() {
-    if (this.isRound) console.log('ROUND');
-    else console.log('DAY');
+  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController,) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopoverPage');
+  }
+
+  close() {
+    this.viewCtrl.dismiss();
+  }
+
+  setRoundOrDay(item) {
+    if(item == 'round') console.log('round');
+    else console.log('day');
   }
 
 }
