@@ -49,10 +49,17 @@ export class HelpPage {
   }
 
   sendpic(){
+    console.log("sendpic");
     
   }
 
   contact(){
+    console.log("contact");
+
+  }
+
+  logout(){
+    console.log("logout!!!");
 
   }
 
