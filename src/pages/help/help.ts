@@ -53,8 +53,13 @@ export class HelpPage {
     
   }
 
-  contact(){
-    console.log("contact");
+  contactLine(){
+    console.log("contactLine");
+
+  }
+  
+  contactPhone(){
+    console.log("contactPhone");
 
   }
 

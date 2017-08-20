@@ -64,7 +64,16 @@ export class NoticePage {
             console.log('Delete Notification..');
             toast.present();
           }
-        }, {
+        }, 
+        {
+          text: 'ลบทั้งหมด',
+          role: 'deleteAll',
+          handler: () => {
+            console.log('Delete All Notification..');
+            toast.present();
+          }
+        }, 
+        {
           text: 'ยกเลิก',
           role: 'cancel',
           handler: () => {
