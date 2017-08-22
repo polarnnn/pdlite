@@ -32,7 +32,8 @@ export class ResultPage {
 
     var canvas = <HTMLCanvasElement>document.getElementById("myChart");
     var ctx = canvas.getContext("2d");
-    Chart.Line(ctx, {
+    var myBarChart = new Chart(ctx, {
+      type: 'line',
       data: {
         labels: [newDate(0),
         newDate(1),
@@ -45,8 +46,7 @@ export class ResultPage {
           {
             label: 'UF',
             fill: false,
-            pointLabelFontColor : "#FFFFFF",
-            data: [500, 300, -400, -500, 100, 300],
+            data: [500, 500, -400, -500, 100, 300],
             backgroundColor: [
               'rgb(255, 99, 132)'
             ],
@@ -79,6 +79,11 @@ export class ResultPage {
           intersect: false,
         },
         scales: {
+          xAxes: [{
+            // unit: 'day',
+            // unitStepSize: 1,
+            
+          }],
           yAxes: [{
             ticks: {
               beginAtZero: true,
